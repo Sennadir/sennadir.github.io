@@ -1,0 +1,8 @@
+@inproceedings{
+ennadir2023a,
+title={A Simple and Yet Fairly Effective Defense for Graph Neural Networks},
+author={Sofiane ENNADIR and Yassine ABBAHADDOU and Michalis Vazirgiannis and Henrik Bostr{\"o}m},
+booktitle={The Second Workshop on New Frontiers in Adversarial Machine Learning},
+year={2023},
+url={https://openreview.net/forum?id=CJgBMut3nC}
+}

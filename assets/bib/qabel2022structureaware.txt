@@ -1,0 +1,8 @@
+@inproceedings{
+qabel2022structureaware,
+title={Structure-Aware Antibiotic Resistance Classification using Graph Neural Networks},
+author={Aymen Qabel and Sofiane ENNADIR and Giannis Nikolentzos and Johannes F. Lutzeyer and Michail Chatzianastasis and Henrik Bostr{\"o}m and Michalis Vazirgiannis},
+booktitle={NeurIPS 2022 AI for Science: Progress and Promises},
+year={2022},
+url={https://openreview.net/forum?id=_BjtIlib8N9}
+}
