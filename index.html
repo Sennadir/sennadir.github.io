@@ -13,6 +13,7 @@
 
     <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
     <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/Main_picture.jpg" type="image/png" />
     <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
@@ -172,8 +173,10 @@
       <div class="periodical"><em>Thirty-Eighth AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.</em>
       </div>
     <div class="links">
-
-       <a href="http://tinyurl.com/ys8xa69a" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <!-- <a href="#" class="btn btn-sm z-depth-0" data-toggle="p5" role="button" target="_blank" style="font-size:12px;">Abstract</a>
+      <p id="p5" style="padding: 5px;border: 0.5px solid;margin-top: 10px; display: none;">Graph Neural Networks (GNNs) have emerged as the dominant approach for machine learning on graph-structured data. However, concerns have arisen regarding the vulnerability of GNNs to small adversarial perturbations. Existing defense methods against such perturbations suffer from high time complexity and can negatively impact the model's performance on clean graphs. To address these challenges, this paper introduces NoisyGNNs, a novel defense method that incorporates noise into the underlying model's architecture. We establish a theoretical connection between noise injection and the enhancement of GNN robustness, highlighting the effectiveness of our approach. We further conduct extensive empirical evaluations on the node classification task to validate our theoretical findings, focusing on two popular GNNs: the GCN and GIN. The results demonstrate that NoisyGNN achieves superior or comparable defense performance to existing methods while minimizing added time complexity. The NoisyGNN approach is model-agnostic, allowing it to be integrated with different GNN architectures. Successful combinations of our NoisyGNN approach with existing defense techniques demonstrate even further improved adversarial defense results.
+</p> -->
+       <a href="assets/files/ennadir24.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
 
 
       <a href="https://github.com/Sennadir/NoisyGNN" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -209,8 +212,10 @@
       <div class="periodical"><em>12th International Conference on Complex Networks<strong> (CNA)</strong>, 2023.</em>
       </div>
     <div class="links">
-
-      <a href="https://drive.google.com/file/d/1ayO8CdXdr8c-Ge5ZKIEZIDB_O7R95lyr/view?usp=sharing" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <!-- <a href="#" class="btn btn-sm z-depth-0" data-toggle="p5" role="button" target="_blank" style="font-size:12px;">Abstract</a>
+      <p id="p5" style="padding: 5px;border: 0.5px solid;margin-top: 10px; display: none;">Graph Neural Networks (GNNs) have demonstrated state-of-the-art performance in various graph representation learning tasks. Recently, studies revealed their vulnerability to adversarial attacks. While the available attack strategies are based on applying perturbations on existing graphs within a specific budget, proposed defense mechanisms successfully guard against this type of attack. This paper proposes a new perspective founded on unrestricted adversarial examples. We propose to produce adversarial attacks by generating completely new data points instead of perturbing existing ones. We introduce a framework, so-called UnboundAttack, leveraging the advancements in graph generation to produce graphs preserving the semantics of the available training data while misleading the targeted classifier. Importantly, our method does not assume any knowledge about the underlying architecture. Finally, we validate the effectiveness of our proposed method in a realistic setting related to molecular graphs.
+</p> -->
+      <a href="assets/files/ennadir23_unbounded.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
 
 
       <!-- <a href="" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a> -->
@@ -313,8 +318,12 @@
       <div class="periodical"><em>Under Review.</em>
       </div>
     <div class="links">
-
+      <!-- <a href="#" class="btn btn-sm z-depth-0" data-toggle="p5" role="button" target="_blank" style="font-size:12px;">Abstract</a>
+      <p id="p5" style="padding: 5px;border: 0.5px solid;margin-top: 10px; display: none;">Graph neural networks (GNNs) have become the standard approach for performing machine learning on graphs. Such models need large amounts of training data, however, in several graph classification and regression tasks, only limited training data is available. Unfortunately, due to the complex nature of graphs, common augmentation strategies employed in other settings, such as computer vision, do not apply to graphs. This work aims to improve the generalization ability of GNNs by increasing the size of the training set of a given problem. The new samples are generated using an iterative contrastive learning procedure that augments the dataset during the training, in a task-relevant approach, by manipulating the graph topology. The proposed approach is general, assumes no knowledge about the underlying architecture, and can thus be applied to any GNN. We provided a theoretical analysis regarding the equivalence of the proposed approach to a regularization technique. We demonstrate instances of our framework on popular GNNs, and evaluate them on several real-world benchmark graph classification datasets. The experimental results show that the proposed approach, in several cases, enhances the generalization of the underlying prediction models reaching in some datasets state-of-the-art performance.
+</p> -->
       <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4578708" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+
+
 
 
       <!-- <a href="" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
@@ -384,6 +393,17 @@
       </footer>
     </div>
     <script src="/assets/js/scale.fix.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $('body').on('click', '[data-toggle]', function(e) {
+          e.preventDefault();
+          let target = $(this).attr('data-toggle');
+          console.log(target);
+          $("#" + target).toggle();
+        })
+      })
+    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
