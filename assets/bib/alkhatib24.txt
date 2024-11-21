@@ -1,0 +1,8 @@
+@inproceedings{
+anonymous2024interpretable,
+title={Interpretable Graph Neural Networks for Tabular Data},
+author={Anonymous},
+booktitle={ICLR 2024 Workshop on Data-centric Machine Learning Research (DMLR): Harnessing Momentum for Science},
+year={2024},
+url={https://openreview.net/forum?id=45gND6LtCz}
+}
