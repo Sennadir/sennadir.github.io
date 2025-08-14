@@ -1,429 +1,420 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <title>Sofiane ENNADIR | KTH</title>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sofiane Ennadir | AI Researcher @ Microsoft (King AI Labs)</title>
+  <meta name="description" content="Official academic homepage – bio, research, teaching, group, and service." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb; /* calm academic blue */
+      --border: #e5e7eb;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.06);
+      --maxw: 1100px;
+      --header-h: 64px;
+    }
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Academic Webpage Of Sofiane.">
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    <meta name="keywords" content="minimal light">
-    <meta name="google-site-verification" content="FFxmk77cR0yAm3OkF_ifDHrTXEatlLjCc47c43RkmHU" />
+    /* Header */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 40;
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 700; letter-spacing: 0.1px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;
+    }
+    .brand a { text-decoration: none; color: var(--text); }
+    .brand .accent { color: var(--accent); }
+    .brand small { color: var(--muted); font-weight: 500; }
 
-    <link rel="canonical" href="https://minimal-light-theme.yliu.me/"/>
+    nav ul { list-style: none; display: flex; gap: 18px; padding: 0; margin: 0; }
+    nav a { color: var(--text); text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--accent); }
 
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    .menu-btn { display: none; background: transparent; border: 0; font-size: 0; }
+    .menu-btn svg { width: 28px; height: 28px; }
 
-    <link rel="icon" media="(prefers-color-scheme:dark)" href="./assets/img/Main_picture.jpg" type="image/png" />
-    <link rel="icon" media="(prefers-color-scheme:light)" href="./assets/img/favicon.png" type="image/png" />
-    <script src="./assets/js/favicon-switcher.js" type="application/javascript"></script>
+    /* Layout */
+    .container { max-width: var(--maxw); margin: 22px auto 60px; padding: 0 18px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .card h2 { margin-top: 0; margin-bottom: 6px; }
+    .subtle { color: var(--muted); margin-top: 0; }
 
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin=anonymous>
+    .bio-grid { display: block; }
 
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/publications.css">
+    .profile {
+      width: 100%; border-radius: 12px; object-fit: cover; aspect-ratio: 4/5;
+      border: 1px solid var(--border);
+    }
 
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border-radius: 9999px; border: 1px solid #e7e9f0;
+      background: radial-gradient(120% 120% at 50% -10%, #ffffff 0%, #f6f7fb 100%);
+      color: var(--text); text-decoration: none; font-weight: 600;
+      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+      box-shadow: 0 1px 0 #fff inset, 0 1px 2px rgba(16,24,40,.06), 0 8px 22px rgba(16,24,40,.06);
+    }
+    .chip:hover { border-color: #d8dbe4; transform: translateY(-1px); box-shadow: 0 2px 0 #fff inset, 0 6px 18px rgba(16,24,40,.10); }
+    .chip svg { width: 18px; height: 18px; }
+    .chip:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(234,91,42,.25), 0 8px 22px rgba(16,24,40,.06); }
+    .chip .label { font-weight: 600; letter-spacing: .2px; }
+    .chip--linkedin, .chip--github, .chip--scholar, .email-chip { color: #111111; }
+    @media (max-width: 520px) { .chip .label { display: none; } }
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
+    .two-col { display: grid; gap: 22px; grid-template-columns: 1fr 1fr; margin-top: 22px; }
 
+    ul.clean { padding-left: 18px; }
 
-        <a class="image avatar"><img src="./assets/img/Main_picture.jpg" alt="avatar" /></a>
+    footer { text-align: center; color: var(--muted); padding: 40px 18px; }
 
+    /* Sections for additional pages */
+    section.anchor { scroll-margin-top: calc(var(--header-h) + 16px); margin-top: 30px; }
 
-        <h1>Sofiane ENNADIR</h1>
+    /* Responsive */
+    @media (max-width: 900px) {
+      .bio-grid { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .menu-btn { display: inline-flex; }
+      nav { position: absolute; left: 0; right: 0; top: var(--header-h); background: var(--panel); border-bottom: 1px solid var(--border); display: none; }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; padding: 12px 18px; gap: 12px; }
+    }
+      .profile--float { float: right; width: 260px; margin: 6px 0 12px 22px; }
+    @media (max-width: 900px){ .profile--float { float:none; display:block; margin: 12px auto; width: 220px; } }
+    /* Experience timeline */
+    .exp-timeline{display:grid;grid-template-columns:280px 1fr;gap:18px;margin-top:8px}
+    .timeline-nav{list-style:none;margin:0;padding:6px 0;border-left:2px solid var(--border)}
+    .timeline-nav li{position:relative;padding:10px 12px 10px 18px;margin-left:0;cursor:pointer;border-left:2px solid transparent}
+    .timeline-nav li::before{content:'';position:absolute;left:-7px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--border)}
+    .timeline-nav li.active{background:#fff;border-left-color:var(--accent)}
+    .timeline-nav li.active::before{background:var(--accent)}
+    .t-title{font-weight:700}
+    .t-sub{color:var(--muted);font-size:.93rem}
+    .t-date{color:var(--muted);font-size:.86rem}
+    .exp-panel h4{margin:0 0 4px 0}
+    .exp-panel .subtle{margin:0 0 10px 0}
+    @media(max-width:900px){.exp-timeline{grid-template-columns:1fr}}
+    /* Experience split list */
+    .exp-split{display:grid;grid-template-columns:320px 1fr;gap:28px;margin-top:10px}
+    .exp-left{position:relative;border-left:3px solid #123a7a;padding-left:20px}
+    .exp-marker{position:absolute;left:-3px;top:0;width:3px;height:40px;background:var(--accent);border-radius:2px;box-shadow:0 0 0 2px rgba(234,91,42,0.08);transition:transform .25s ease, height .25s ease}
+    @media(max-width:900px){.exp-marker{display:none}}
+    .exp-list{list-style:none;margin:0;padding:0}
+    .exp-link{display:block;width:100%;background:transparent;border:0;padding:14px 8px;font-size:1.05rem;letter-spacing:.2px;color:#1e3a8a;text-align:left;cursor:pointer;border-radius:10px}
+    .exp-link:hover{text-decoration:underline}
+    .exp-link.active{color:var(--text);background:#fff;box-shadow:var(--shadow)}
+    .exp-right h3{margin:0 0 6px 0;font-size:1.6rem}
+    .exp-meta{color:var(--muted);font-weight:500}
+    @media(max-width:900px){.exp-split{grid-template-columns:1fr}.exp-left{border-left:none;padding-left:0}}
+    /* Publications */
+    .pub { margin: 16px 0 24px; }
+    .pub-title { font-weight: 600; }
+    .pub-title a { color: var(--text); text-decoration: none; }
+    .pub-title a:hover { color: var(--accent); }
+    .pub-meta { color: var(--muted); font-size: 0.95rem; }
+    .pub-meta .authors { color: var(--text); }
+    .abs-btn { border: 1px solid var(--border); background: var(--panel); padding: 6px 10px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .abs-btn:hover { border-color: #d6d9df; }
+    .abstract-box { margin-top: 10px; border: 1px dashed var(--border); border-radius: 10px; padding: 12px; background: #fff; }
+    body { padding-top: var(--header-h); }
+  </style>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="nav-wrap">
+      <div class="brand">
+        <a href="#about"><span class="accent">Sofiane Ennadir</span></a>
+        <small>| AI Researcher @ Microsoft (King AI Labs)</small>
+      </div>
+      <button class="menu-btn" aria-label="Toggle navigation" onclick="document.querySelector('nav').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#experience">Experience</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container" id="about">
+    <!-- Official Bio Card -->
+    <section class="card">
+      <h2>About Me</h2>
+      <div class="bio-grid">
+        <div>
+          <img class="profile profile--float" src="./assets/img/Main_picture.jpg" alt="Portrait of Sofiane Ennadir" />
+          <!-- <p>I am an AI/ML Researcher at Microsoft (King AI Labs), where my work primarily focuses on <strong>Temporal Graph Neural Networks</strong> and their application across industrial use cases. Recently, my interests have expanded to include the inner workings of Transformer-based architectures and <strong>Large Language Models (LLMs)</strong>, aiming to better understand their underlying mechanisms.</p> -->
+          <p>I am an AI/ML Researcher at Microsoft (King AI Labs), where my current focus lies in the theoretical foundations of <strong>Transformer-based architectures</strong> and <strong>Large Language Models (LLMs)</strong>, with an emphasis on understanding their inner mechanisms. I am also interested in <strong>Temporal Graph Neural Networks</strong> and their application to dynamic, real-world systems such as recommendation engines. </p>
+          <p>I am currently finalizing my PhD in the School of Electrical Engineering and Computer Science at the <a href="https://www.kth.se" target="_blank" rel="noopener">KTH Royal Institute of Technology</a> in Sweden. My research is conducted under the supervision of Professor <a href="https://www.lix.polytechnique.fr" target="_blank" rel="noopener">Michalis Vazirgiannis</a> and Professor <a href="https://www.kth.se" target="_blank" rel="noopener">Henrik Boström</a>, with funding from the <a href="https://wasp-sweden.org" target="_blank" rel="noopener">Wallenberg AI, Autonomous Systems and Software Program (WASP)</a>.</p>
+          <p>My doctoral work explores the <strong>robustness of Graph Neural Networks (GNNs)</strong>, with a particular emphasis on adversarial attacks, both analyzing and developing attack strategies, while designing efficient and theoretically grounded defenses.</p>
+          <p>I also spent a summer at the <a href="https://www.simonsfoundation.org/flatiron/" target="_blank" rel="noopener">Flatiron Institute</a> (Simons Foundation) as part of the <a href="https://polymathic-ai.org" target="_blank" rel="noopener">Foundation Models for Science</a> initiative, collaborating with <a href="https://leopoldo.sarra.eu/" target="_blank" rel="noopener">Leopoldo Sarra</a> and <a href="https://siavashgolkar.com" target="_blank" rel="noopener">Siavash Golkar</a> on extending Joint Embedding approaches for time series.</p>
+          <p>Previously, I earned an MSc in “Applied Mathematics – Data Sciences” from <a href="https://www.polytechnique.edu" target="_blank" rel="noopener">École Polytechnique</a> (Paris, France) and an Engineering Master's degree from <a href="https://www.emines-ingenieur.org" target="_blank" rel="noopener">EMINES</a>, School of Industrial Management at Mohammed VI Polytechnic University (UM6P) in Morocco.</p>
 
-        <position style="font-size:1.10rem;">AI Researcher</position>
-        <br>
-
-
-        <a href="" rel="noopener"><autocolor>Microsoft (ABK - King AI Labs)</autocolor></a>
-        <br>
-
-        <email>ennadir [at] kth [dot] se</email>
-
-        <br>
-        <br>
-        <div class="social-icons">
-
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.fr/citations?user=EqqOxfMAAAAJ&hl=en">
-          <i class="ai ai-google-scholar" style="font-size:1.2rem"></i>
-        </a>
-
-
-
-        <a style="margin: 0 5px 0 0" href="assets/files/CV_Sofiane.pdf">
-          <i class="ai ai-cv" style="font-size:1.3rem;"></i>
-        </a>
-
-
-
-        <a style="margin: 0 5px 0 0" href="https://github.com/Sennadir">
-          <i class="fab fa-github"></i>
-        </a>
-
-
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/in/sofiane-ennadir/">
-          <i class="fab fa-linkedin"></i>
-        </a>
-
-
-
-        <a style="margin: 0 0 0 0" href="https://www.kth.se/profile/ennadir?l=en">
-          <i class="fa fa-info"></i>
-        </a>
-
+          <div class="chips" aria-label="Profile links">
+            <a class="chip chip--scholar" href="https://scholar.google.fr/citations?hl=en&user=EqqOxfMAAAAJ" target="_blank" rel="noopener" title="Google Scholar">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5Zm0 7L4 7l8-4 8 4-8 2Zm-8 4 8 4 8-4" fill="currentColor" opacity=".35"/><path d="M4 13v5l8 4 8-4v-5l-8 4-8-4Z" fill="currentColor"/></svg>
+              <span class="label">Scholar</span>
+            </a>
+            <a class="chip chip--linkedin" href="https://www.linkedin.com/in/sofiane-ennadir/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8.98h4.99V24H0zM8.98 8.98H14v2.05h.08c.7-1.32 2.4-2.7 4.94-2.7 5.29 0 6.27 3.48 6.27 8v7.67h-5V17c0-1.67-.03-3.81-2.32-3.81-2.32 0-2.68 1.81-2.68 3.68V24h-5z" fill="currentColor"/></svg>
+              <span class="label">LinkedIn</span>
+            </a>
+            <a class="chip chip--github" href="https://github.com/Sennadir" target="_blank" rel="noopener" title="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.1c0 4.5 2.9 8.3 6.9 9.6.5.1.7-.2.7-.5v-2c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1-1.4-1-1.4-.9-.7.1-.7.1-.7 1 .1 1.6 1 1.6 1 .9 1.6 2.4 1.1 3 .9.1-.6.4-1.1.7-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1 .8-.2 1.7-.3 2.5-.3s1.7.1 2.5.3c2.1-1.4 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.7.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.8.9.8 1.8v2.7c0 .3.2.6.7.5 4-1.3 6.9-5.1 6.9-9.6C22 6.6 17.5 2 12 2z" fill="currentColor"/></svg>
+              <span class="label">GitHub</span>
+            </a>
+            <a class="chip chip--cv" href="https://sennadir.github.io/assets/files/CV_Sofiane.pdf" target="_blank" rel="noopener" title="CV (download)">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14a1 1 0 0 0 1-1v-4h-2v3H6v-3H4v4a1 1 0 0 0 1 1zm7-4l5-5h-3V4h-4v7H7l5 5z" fill="currentColor"/></svg>
+              <span class="label">CV</span>
+            </a>
+          </div>
         </div>
-        <br>
+      </div>
+    </section>
 
-      </header>
-      <section>
+    <section id="news" class="anchor">
+      <div class="card">
+        <h2>News</h2>
+        <ul class="clean">
+          <li><strong>May 2025</strong> — Gave a talk on my previous and current work on GNN Robustness in the <a href="https://netys.net/metis-spring-school-2025/">Metis Spring School</a> organized in Rabat, Morocco.</li>
+          <li><strong>Feb 2025</strong> — Our survey paper "Expressivity of Representation Learning on Continuous-Time Dynamic Graphs: An Information-Flow Centric Review" is accepted to <a href="https://openreview.net/forum?id=M7Lhr2anjg">TMLR</a> with a Survey Certification !</li>
+          <li><strong>Sep 2024</strong> — Our paper "Joint Embedding go Temporal" is accepted to the "Time Series in the Age of Large Models" <a href="https://neurips-time-series-workshop.github.io/">Workshop</a> at Neurips 2024!</li>
+          <li><strong>Sep 2024</strong> — Our paper "If You Want to Be Robust, Be Wary of Initialization" is accepted to <a href="https://neurips.cc/">Neurips 2024</a>!</li>
+          <li><strong>Apr 2024</strong> — Presented my work on GNN robustness on the <a href="https://mlcollective.org/dlct/" target="_blank">Deep Learning: Classics and Trends</a> reading group (Collective ML) [<a href="https://rosanneliu.com/dlctfs/dlct_240517.pdf" target="_blank">Slides</a>].</li>
+          <li><strong>Mar 2024</strong> — Presented my work on GNN robustness paper at the <a href="https://morocco.ai/" target="_blank">Morocco AI</a> Webinar [<a href="assets/files/Morocco_AI_seminar.pdf" target="_blank">Slides</a> | <a href="https://www.youtube.com/watch?v=u9rh4aXoW6g" target="_blank">Recording</a>].</li>
+        </ul>
+      </div>
+    </section>
 
-      <h2 id="about-me">About Me</h2>
+    <!-- Additional placeholder sections to match the top navigation -->
+    <section id="research" class="anchor">
+      <div class="card">
+        <h2>Publications</h2>
+        <ol class="clean">
+          <li class="pub">
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">Expressivity of Representation Learning on Continuous-Time Dynamic Graphs: An Information-Flow Centric Review</a></div>
+            <div class="pub-meta"><span class="authors"><strong>S. Ennadir</strong>*, G. Zarzar*, F. Cornell*, L. Cao, O. Smirnov, T. Wang, L. Zólyomi, B. Brinne, S. Asadi</span> — <em>TMLR</em>, 2025.<br> [<a href="https://openreview.net/forum?id=M7Lhr2anjg" target="_blank" rel="noopener">PDF</a>] [<a href="https://github.com/king/ctdg-info-flow" target="_blank" rel="noopener">Code</a>] [<a href="#" class="abs-link" aria-expanded="false">Abstract</a>]</div>
+            <div class="abstract-box" hidden>Graphs are ubiquitous in real-world applications, ranging from social networks to biological systems, and have inspired the development of Graph Neural Networks (GNNs) for learning expressive representations. While most research has centered on static graphs, many real-world scenarios involve dynamic, temporally evolving graphs, motivating the need for Continuous-Time Dynamic Graph (CTDG) models. This paper provides a comprehensive review of Graph Representation Learning (GRL) on CTDGs with a focus on Self-Supervised Representation Learning (SSRL). We introduce a novel theoretical framework that analyzes the expressivity of CTDG models through an Information-Flow (IF) lens, quantifying their ability to propagate and encode temporal and structural information. Leveraging this framework, we categorize existing CTDG methods based on their suitability for different graph types and application scenarios. Within the same scope, we examine the design of SSRL methods tailored to CTDGs, such as predictive and contrastive approaches, highlighting their potential to mitigate the reliance on labeled data. Empirical evaluations on synthetic and real-world datasets validate our theoretical insights, demonstrating the strengths and limitations of various methods across long-range, bi-partite and community-based graphs. This work offers both a theoretical foundation and practical guidance for selecting and developing CTDG models, advancing the understanding of GRL in dynamic settings.</div>
+          </li>
+          <li class="pub">
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">If You Want to Be Robust, Be Wary of Initialization</a></div>
+            <div class="pub-meta"><span class="authors"><strong>S. Ennadir</strong>, J. Lutzeyer, M. Vazirgiannis, E. Bergou</span> — <em>NeurIPS</em>, 2024.<br> [<a href="https://openreview.net/pdf?id=nxumYwxJPB" target="_blank" rel="noopener">PDF</a>] [<a href="https://github.com/Sennadir/Initialization_effect" target="_blank" rel="noopener">Code</a>] [<a href="#" class="abs-link" aria-expanded="false">Abstract</a>]</div>
+            <div class="abstract-box" hidden>Graph Neural Networks (GNNs) have demonstrated remarkable performance across a spectrum of graph-related tasks, however concerns persist regarding their vulnerability to adversarial perturbations. While prevailing defense strategies focus primarily on pre-processing techniques and adaptive message-passing schemes, this study delves into an under-explored dimension: the impact of weight initialization and associated hyper-parameters, such as training epochs, on a model’s robustness.
+            We introduce a theoretical framework bridging the connection between initialization strategies and a network's resilience to adversarial perturbations. Our analysis reveals a direct relationship between initial weights, number of training epochs and the model’s vulnerability, offering new insights into adversarial robustness beyond conventional defense mechanisms. While our primary focus is on GNNs, we extend our theoretical framework, providing a general upper-bound applicable to Deep Neural Networks.
+            Extensive experiments, spanning diverse models and real-world datasets subjected to various adversarial attacks, validate our findings. We illustrate that selecting appropriate initialization not only ensures performance on clean datasets but also enhances model robustness against adversarial perturbations, with observed gaps of up to 50% compared to alternative initialization approaches.</div>
+          </li>
+          <li class="pub">
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">Joint Embeddings Go Temporal</a></div>
+            <div class="pub-meta"><span class="authors"><strong>S. Ennadir</strong>, S. Golkar, L. Sarra</span> — <em>Time Series in the Age of Large Models Workshop - NeurIPS </em> 2024. <br> [<a href="https://openreview.net/pdf?id=FIdbozebmy" target="_blank" rel="noopener">PDF</a>] [<a href="https://github.com/Sennadir/TS_JEPA" target="_blank" rel="noopener">Code</a>] [<a href="#" class="abs-link" aria-expanded="false">Abstract</a>]</div>
+            <div class="abstract-box" hidden>Self-supervised learning has seen great success recently in unsupervised representation learning, enabling breakthroughs in natural language and image processing. However, these methods often rely on autoregressive and masked modeling, which aim to reproduce masked information in the input, which can be vulnerable to the presence of noise or confounding variables. To address this problem, Joint-Embedding Predictive Architectures (JEPA) has been introduced with the aim to perform self-supervised learning in the latent space. To leverage these advancements in the domain of time series, we introduce Time Series JEPA (TS-JEPA), an architecture specifically adapted for time series representation learning.  We validate TS-JEPA on both classification and forecasting, showing that it can match or surpass current state-of-the-art baselines on different standard datasets. Notably, our approach demonstrates a strong performance balance across diverse tasks, indicating its potential as a robust foundation for learning general representations. Thus, this work lays the groundwork for developing future time series foundation models based on Joint Embedding.</div>
+          </li>
+          <li class="pub">
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">Bounding the Expected Robustness of Graph Neural Networks Subject to Node Feature Attacks</a></div>
+            <div class="pub-meta"><span class="authors">Y. Abbahaddou*, <strong>S. Ennadir</strong>*, J. Lutzeyer, M. Vazirgiannis, H. Boström</span> — <em>ICLR</em>, 2024.<br> [<a href="https://openreview.net/forum?id=DfPtC8uSot" target="_blank" rel="noopener">PDF</a>] [<a href="https://github.com/Sennadir/GCORN" target="_blank" rel="noopener">Code</a>] [<a href="#" class="abs-link" aria-expanded="false">Abstract</a>]</div>
+            <div class="abstract-box" hidden>Graph Neural Networks (GNNs) have demonstrated state-of-the-art performance in various graph representation learning tasks. Recently, studies revealed their vulnerability to adversarial attacks. In this work, we theoretically define the concept of expected robustness in the context of attributed graphs and relate it to the classical definition of adversarial robustness in the graph representation learning literature. Our definition allows us to derive an upper bound of the expected robustness of Graph Convolutional Networks (GCNs) and Graph Isomorphism Networks subject to node feature attacks. Building on these findings, we connect the expected robustness of GNNs to the orthonormality of their weight matrices and consequently propose an attack-independent, more robust variant of the GCN, called the Graph Convolutional Orthonormal Robust Networks (GCORNs). We further introduce a probabilistic method to estimate the expected robustness, which allows us to evaluate the effectiveness of GCORN on several real-world datasets. Experimental experiments showed that GCORN outperforms available defense methods.</div>
+          </li>
+          <li class="pub">
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">A Simple and Yet Fairly Effective Defense for Graph Neural Networks</a></div>
+            <div class="pub-meta"><span class="authors"><strong>S. Ennadir</strong>, Y. Abbahaddou, J. Lutzeyer, M. Vazirgiannis, H. Boström</span> — <em>AAAI</em>, 2024.<br> [<a href="https://arxiv.org/pdf/2402.13987" target="_blank" rel="noopener">PDF</a>] [<a href="https://github.com/Sennadir/NoisyGNN" target="_blank" rel="noopener">Code</a>] [<a href="#" class="abs-link" aria-expanded="false">Abstract</a>]</div>
+            <div class="abstract-box" hidden>Graph Neural Networks (GNNs) have emerged as the dominant approach for machine learning on graph-structured data. However, concerns have arisen regarding the vulnerability of GNNs to small adversarial perturbations. Existing defense methods against such perturbations suffer from high time complexity and can negatively impact the model's performance on clean graphs. To address these challenges, this paper introduces NoisyGNNs, a novel defense method that incorporates noise into the underlying model's architecture. We establish a theoretical connection between noise injection and the enhancement of GNN robustness, highlighting the effectiveness of our approach. We further conduct extensive empirical evaluations on the node classification task to validate our theoretical findings, focusing on two popular GNNs: the GCN and GIN. The results demonstrate that NoisyGNN achieves superior or comparable defense performance to existing methods while minimizing added time complexity. The NoisyGNN approach is model-agnostic, allowing it to be integrated with different GNN architectures. Successful combinations of our NoisyGNN approach with existing defense techniques demonstrate even further improved adversarial defense results.</div>
+          </li>
+          <li class="pub">
+            <div class="pub-title"><a href="#" target="_blank" rel="noopener">UnboundAttack: Generating Unbounded Adversarial Attacks to Graph Neural Networks</a></div>
+            <div class="pub-meta"><span class="authors"><strong>S. Ennadir</strong>, A. Alkhatib, G. Nikolentzos, M. Vazirgiannis, H. Boström</span> — <em>CNA</em>, 2023.<br> [<a href="assets/files/ennadir23_unbounded.pdf" target="_blank" rel="noopener">PDF</a>] [<a href="https://drive.google.com/file/d/1JQ2w78eybaV63jG1Cx4rL2_RCzgFM76d/view?usp=sharing" target="_blank" rel="noopener">Slides</a>] [<a href="#" class="abs-link" aria-expanded="false">Abstract</a>]</div>
+            <div class="abstract-box" hidden>Graph Neural Networks (GNNs) have demonstrated state-of-the-art performance in various graph representation learning tasks. Recently, studies revealed their vulnerability to adversarial attacks. While the available attack strategies are based on applying perturbations on existing graphs within a specific budget, proposed defense mechanisms successfully guard against this type of attack. This paper proposes a new perspective founded on unrestricted adversarial examples. We propose to produce adversarial attacks by generating completely new data points instead of perturbing existing ones. We introduce a framework, so-called UnboundAttack, leveraging the advancements in graph generation to produce graphs preserving the semantics of the available training data while misleading the targeted classifier. Importantly, our method does not assume any knowledge about the underlying architecture. Finally, we validate the effectiveness of our proposed method in a realistic setting related to molecular graphs.</div>
+          </li>
+        </ol>
+        <p class="subtle">* denotes equal contribution.</p>
+      </div>
+    </section>
 
-<p align="justify">
-  I am an AI/ML Researcher at Microsoft (King AI Labs), where my work primarily focuses on Temporal Graph Neural Networks and their application across various industrial use cases. Recently, my interests have expanded to include the inner workings of Transformer-based architectures and Large Language Models (LLMs), aiming to better understand their underlying mechanisms.
-</p>
-
-<p align="justify">
-  I am currently finalizing my PhD in the School of Electrical Engineering and Computer Science at the <a href="https://www.kth.se">KTH Royal Institute of Technology</a> in Sweden. My research is conducted under the supervision of Professor <a href="https://www.lix.polytechnique.fr/Labo/Michalis.Vazirgiannis/">Michalis Vazirgiannis</a> and Professor <a href="https://www.kth.se/profile/henbos">Henrik Boström</a>, with funding from the <a href="https://wasp-sweden.org/">Wallenberg AI, Autonomous Systems and Software Program (WASP)</a>. My doctoral work explores the robustness of Graph Neural Networks (GNNs), with a particular emphasis on adversarial attacks. I aim to both analyze and develop adversarial strategies, while designing efficient and practical defense mechanisms grounded in theoretical insights.
-</p>
-
-<p align="justify">
-  I had the opportunity to spend a summer at the <a href="https://www.simonsfoundation.org/flatiron">Flatiron Institute</a> as part of the <a href="https://polymathic-ai.org/">Foundation Models for Science initiative</a>, where I collaborated with <a href="https://users.flatironinstitute.org/~lsarra/">Leopoldo Sarra</a> and <a href="https://siavashgolkar.com/">Siavash Golkar</a>. Our work centered on extending the Joint Embedding approach to enable foundational modeling for time series data.
-</p>
-
-<p align="justify">
-  Before joining KTH, I earned an MSc in "Applied Mathematics – Data Sciences" from <a href="https://www.polytechnique.edu/en">École Polytechnique</a> in Paris, France. I also hold an Engineering Master's degree from <a href="https://www.emines-ingenieur.org/">EMINES</a>, School of Industrial Management at Mohammed VI Polytechnic University (UM6P) in Morocco.
-</p>
-
-
-
-
-<p>My academic CV can be accessed <a href="assets/files/CV_Sofiane.pdf">here</a>. </p>
-<hr>
-<!-- <h2 id="research-interests">Research Interests</h2>
-
-<ul>
-  <li><strong>Computer Vision:</strong> image recognition, image generation, video captioning</li>
-  <li><strong>Machine Learning:</strong> meta-learning, incremental learning, transfer learning</li>
-</ul> -->
-
-<h2 id="news">News</h2>
-
-<ul>
-  <li><strong>[May 2025]</strong> Gived a talk on my previous and current work on GNN Robustness in the <a href="https://netys.net/metis-spring-school-2025/">Metis Spring School</a> organized in Rabat, Morocco.</li>
-  <li><strong>[Feb. 2025]</strong> Our survey paper "Expressivity of Representation Learning on Continuous-Time Dynamic Graphs: An Information-Flow Centric Review" is accepted to <a href="https://openreview.net/forum?id=M7Lhr2anjg">TMLR</a> with a Survey Certification !</li>
-  <li><strong>[Sep. 2024]</strong> Our paper "Joint Embedding go Temporal" is accepted to the "Time Series in the Age of Large Models" <a href="https://neurips-time-series-workshop.github.io/">Workshop</a> at Neurips 2024!</li>
-  <li><strong>[Sep. 2024]</strong> Our paper "If You Want to Be Robust, Be Wary of Initialization" is accepted to <a href="https://neurips.cc/">Neurips 2024</a>!</li>
-  <li><strong>[Apr. 2024]</strong> Presented my work on GNN robustness on the <a href="https://mlcollective.org/dlct/" target="_blank">Deep Learning: Classics and Trends</a> reading group (Collective ML) [<a href="https://rosanneliu.com/dlctfs/dlct_240517.pdf" target="_blank">Slides</a>].</li>
-  <li><strong>[Mar. 2024]</strong> Presented my work on GNN robustness paper at the <a href="https://morocco.ai/" target="_blank">Morocco AI</a> Webinar [<a href="assets/files/Morocco_AI_seminar.pdf" target="_blank">Slides</a> | <a href="https://www.youtube.com/watch?v=u9rh4aXoW6g" target="_blank">Recording</a>].</li>
-  <!-- <li><strong>[Jan. 2024]</strong> Our paper "Bounding the Expected Robustness of Graph Neural Networks Subject to Node Feature Attacks" is accepted to <a href="https://iclr.cc/Conferences/2024/">ICLR 2024</a>!</li> -->
-  <!-- <li><strong>[Dec. 2023]</strong> Our paper "Simple and Yet Fairly Effective Defense for Graph Neural Networks" is accepted to <a href="https://aaai.org/aaai-conference/">AAAI 2024</a>!</li> -->
-  <!-- <li><strong>[Nov. 2023]</strong> Presented our paper "UnboundAttack : Generating Unbounded Adversarial Attacks to Graph Neural Networks" at <a href="https://complexnetworks.org/">12th Internation Conference on Complex Networks</a>. - <a href="https://drive.google.com/file/d/1JQ2w78eybaV63jG1Cx4rL2_RCzgFM76d/view?usp=sharing">[Slides]</a></li> -->
-  <!-- <li><strong>[Sep. 2023]</strong> Presented "Conformalized Adversarial Attack Detection for Graph Neural Networks" at <a href="https://copa-conference.com/">12th Symposium on Conformal and Probabilistic Prediction with Applications</a>. - <a href="https://drive.google.com/file/d/1lgSL69aKWvhpvBZIpFF_4ygqkFbIGo8m/view?usp=sharing">[Slides]</a></li> -->
-  <!-- <li><strong>[Jun. 2023]</strong> Our paper "Simple and Yet Fairly Effective Defense for Graph Neural Networks" is accepted to the <a href="https://advml-frontier.github.io/">AdvML workshop</a> at ICML 2023!</li> -->
-  <!-- <li><strong>[Apr. 2023]</strong> New <a href="https://www.biorxiv.org/content/biorxiv/early/2023/04/06/2022.10.06.511103.full.pdf">Preprint</a> of our work on detecting ARGs using both Sequence and Structures. This work has also been presented at the <a href="https://ai4sciencecommunity.github.io/">AI forScience</a> at Neurips 2022.</li> -->
-</ul>
-
-<hr>
-
-<h2 id="publications" style="margin: 2px 0px -15px;">Publications</h2>
-
-<div class="publications">
-  <sup>*</sup> is used to denote equal contribution.
-  <br><br>
-<ol class="bibliography">
-
-
-  <li>
-  <div class="pub-row">
-    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-        <div class="title"><a href="https://openreview.net/forum?id=M7Lhr2anjg">Expressivity of Representation Learning on Continuous-Time Dynamic Graphs: An Information-Flow Centric Review</a></div>
-        <div class="author"><strong>S. Ennadir</strong>, G. Gandler, F. Cornell, L. Cao, O. Smirnov & Al.</div>
-        <div class="periodical"><em>Transactions on Machine Learning Research <strong>(TMLR)</strong>.</em>
+    <section id="experience" class="anchor">
+      <div class="card">
+        <h2>Experience</h2>
+        <div class="exp-split">
+          <div class="exp-left">
+            <div class="exp-marker" aria-hidden="true"></div>
+            <ul class="exp-list" role="tablist" aria-orientation="vertical">
+              <li><button class="exp-link active" data-target="exp-1" role="tab" aria-controls="exp-1">Microsoft (ABK – King AI Labs)</button></li>
+              <li><button class="exp-link" data-target="exp-2" role="tab" aria-controls="exp-2">Flatiron Institute (Simons Foundation)</button></li>
+              <li><button class="exp-link" data-target="exp-3" role="tab" aria-controls="exp-3">BNP Paribas</button></li>
+              <li><button class="exp-link" data-target="exp-4" role="tab" aria-controls="exp-4">University of Louisville</button></li>
+            </ul>
+          </div>
+          <div class="exp-right">
+            <div id="exp-1" role="tabpanel">
+              <h3>AI/ML Researcher @ <span>Microsoft (ABK – King AI Labs)</span></h3>
+              <div class="exp-meta">Aug 2024–Present · Stockholm, Sweden</div>
+              <ul class="clean">
+                <li>Self‑Supervised representation learning on Continuous‑Time Dynamic Graphs (CTDG).</li>
+                <li>Theoretical investigations of Transformer‑based models.</li>
+              </ul>
+            </div>
+            <div id="exp-2" role="tabpanel" hidden>
+              <h3>Research Intern @ <span>Flatiron Institute (Simons Foundation)</span></h3>
+              <div class="exp-meta">May–Aug 2024 · New York, USA</div>
+              <ul class="clean">
+                <li>Polymathic AI initiative.</li>
+                <li>Extended Joint‑Embedding Predictive Architectures (JEPA) for time‑series pre‑training.</li>
+              </ul>
+            </div>
+            <div id="exp-3" role="tabpanel" hidden>
+              <h3>Research Intern @ <span>BNP Paribas (RISK AIR)</span></h3>
+              <div class="exp-meta">Jun–Dec 2020 · Paris, France</div>
+              <ul class="clean">
+                <li>Interpretability of ML/DL models at Risk AIR.</li>
+                <li>Counterfactual explanations in black‑box settings.</li>
+              </ul>
+            </div>
+            <div id="exp-4" role="tabpanel" hidden>
+              <h3>Research Scholar @ <span>University of Louisville</span></h3>
+              <div class="exp-meta">Apr-Sep 2018 · Louisville, KY, USA</div>
+              <ul class="clean">
+                <li>ML‑based CT lung‑cancer detection.</li>
+                <li>Built CAD pipeline achieving ≈94% (±0.6) accuracy on LUNA Challenge.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      <div class="links">
-
-         <a href="https://openreview.net/pdf?id=M7Lhr2anjg" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-        <a href="https://github.com/king/ctdg-info-flow" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-        <!-- <a class="abstract btn btn-sm z-depth-0 waves-effect waves-light" role="button">Abs</a> -->
-
-        <!-- <a href="./assets/bib/ennadir2024if.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a> -->
-
-
-        <!-- <strong> <i style="color:#e74d3c">Early Accept</i></strong> -->
-
       </div>
-    </div>
+    </section>
 
-  </div>
-  </li>
-
-  <li>
-  <div class="pub-row">
-    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-        <div class="title"><a href="https://openreview.net/pdf?id=nxumYwxJPB">If You Want to Be Robust, Be Wary of Initialization</a></div>
-        <div class="author"><strong>S. Ennadir</strong>, J. Lutzeyer, M. Vazirgiannis & E. Bergou.</div>
-        <div class="periodical"><em>The Thirty-Eighth Annual Conference on Neural Information Processing Systems <strong>(Neurips)</strong>, 2024.</em>
-        </div>
-      <div class="links">
-
-         <a href="https://openreview.net/pdf?id=nxumYwxJPB" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-        <a href="https://github.com/Sennadir/Initialization_effect" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-        <!-- <a class="abstract btn btn-sm z-depth-0 waves-effect waves-light" role="button">Abs</a> -->
-
-        <a href="./assets/bib/ennadir2024if.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
-
-
-        <!-- <strong> <i style="color:#e74d3c">Early Accept</i></strong> -->
-
+    <section id="misc" class="anchor">
+      <div class="card">
+        <h2>Academic Service</h2>
+        <h3>Talks</h3>
+        <ul class="clean">
+          <li>From Bounds to Defenses: A Comprehensive Look at GNN Robustness — <a href="https://netys.net" target="_blank" rel="noopener">Metis Spring School</a>.</li>
+          <li>Theoretically Upper-Bounding the Expected Adversarial Robustness of GNNs — <a href="https://mlcollective.org" target="_blank" rel="noopener">Collective ML</a> reading group. [<a href="https://rosanneliu.com/dlctfs/dlct_240517.pdf" target="_blank">Slides</a>]</li>
+          <li>Adversarial Robustness of GNNs — <a href="https://morocco.ai" target="_blank" rel="noopener">MoroccoAI</a> webinar. [<a href="assets/files/Morocco_AI_seminar.pdf" target="_blank">Slides</a> | <a href="https://www.youtube.com/watch?v=u9rh4aXoW6g" target="_blank">Recording</a>]</li>
+        </ul>
+        <h3>Academic Reviewing</h3>
+        <ul class="clean">
+          <li>NeurIPS (2025, 2024), ICLR (2025), KDD (2025), Learning on Graphs (2024), TMLR.</li>
+        </ul>
       </div>
-    </div>
-
-  </div>
-  </li>
-
-
-  <li>
-  <div class="pub-row">
-    <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-      <img src="./assets/img/aaai.png" class="teaser img-fluid z-depth-1" style="width=100;height=50%; object-fit: contain;" />
-              <abbr class="badge">AAAI-24</abbr>
-    </div> -->
-    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-        <div class="title"><a href="./assets/files/TS_JEPA.pdf">Joint Embedding go Temporal</a></div>
-        <div class="author"><strong>S. Ennadir</strong>, S. Golkar, L. Sarra.</div>
-        <div class="periodical"><em>Time Series in the Age of Large Models Workshop, Neurips 2024.</em>
-        </div>
-      <div class="links">
-
-         <a href="./assets/files/TS_JEPA.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-        <a href="https://github.com/Sennadir/TS_JEPA" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-        <!-- <a class="abstract btn btn-sm z-depth-0 waves-effect waves-light" role="button">Abs</a> -->
-
-        <!-- <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a> -->
-
-
-        <!-- <strong> <i style="color:#e74d3c">Early Accept</i></strong> -->
-
-      </div>
-    </div>
-
-  </div>
-
-
-  </li>
-
-
-
-  <li>
-  <div class="pub-row">
-    <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-      <img src="./assets/img/aaai.png" class="teaser img-fluid z-depth-1" style="width=100;height=50%; object-fit: contain;" />
-              <abbr class="badge">AAAI-24</abbr>
-    </div> -->
-    <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-        <div class="title"><a href="https://openreview.net/forum?id=DfPtC8uSot">Bounding the Expected Robustness of Graph Neural Networks Subject to Node Feature Attacks</a></div>
-        <div class="author">Y. Abbahadou<sup>*</sup>, <strong>S. Ennadir<sup>*</sup></strong>, J. Lutzeyer, M. Vazirgiannis & H. Boström.</div>
-        <div class="periodical"><em>The Twelfth International Conference on Learning Representations <strong>(ICLR)</strong>, 2024.</em>
-        </div>
-      <div class="links">
-
-         <a href="https://openreview.net/forum?id=DfPtC8uSot" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-        <a href="https://github.com/Sennadir/GCORN" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-        <!-- <a class="abstract btn btn-sm z-depth-0 waves-effect waves-light" role="button">Abs</a> -->
-
-        <a href="#" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
-
-
-        <!-- <strong> <i style="color:#e74d3c">Early Accept</i></strong> -->
-
-      </div>
-    </div>
-
-  </div>
-
-
-  </li>
-
-<br />
-
-<li>
-<div class="pub-row">
-  <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="./assets/img/aaai.png" class="teaser img-fluid z-depth-1" style="width=100;height=50%; object-fit: contain;" />
-            <abbr class="badge">AAAI-24</abbr>
-  </div> -->
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://tinyurl.com/yfawet7r">A Simple and Yet Fairly Effective Defense for Graph Neural Networks</a></div>
-      <div class="author"><strong>S. Ennadir </strong>, Y. Abbahadou, J. Lutzeyer, M. Vazirgiannis & H. Boström.</div>
-      <div class="periodical"><em>Thirty-Eighth AAAI Conference on Artificial Intelligence <strong>(AAAI)</strong>, 2024.</em>
-      </div>
-    <div class="links">
-      <!-- <a href="#" class="btn btn-sm z-depth-0" data-toggle="p5" role="button" target="_blank" style="font-size:12px;">Abstract</a>
-      <p id="p5" style="padding: 5px;border: 0.5px solid;margin-top: 10px; display: none;">Graph Neural Networks (GNNs) have emerged as the dominant approach for machine learning on graph-structured data. However, concerns have arisen regarding the vulnerability of GNNs to small adversarial perturbations. Existing defense methods against such perturbations suffer from high time complexity and can negatively impact the model's performance on clean graphs. To address these challenges, this paper introduces NoisyGNNs, a novel defense method that incorporates noise into the underlying model's architecture. We establish a theoretical connection between noise injection and the enhancement of GNN robustness, highlighting the effectiveness of our approach. We further conduct extensive empirical evaluations on the node classification task to validate our theoretical findings, focusing on two popular GNNs: the GCN and GIN. The results demonstrate that NoisyGNN achieves superior or comparable defense performance to existing methods while minimizing added time complexity. The NoisyGNN approach is model-agnostic, allowing it to be integrated with different GNN architectures. Successful combinations of our NoisyGNN approach with existing defense techniques demonstrate even further improved adversarial defense results.
-</p> -->
-       <a href="assets/files/ennadir24.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-      <a href="https://github.com/Sennadir/NoisyGNN" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-      <!-- <a class="abstract btn btn-sm z-depth-0 waves-effect waves-light" role="button">Abs</a> -->
-
-      <a href="./assets/bib/ennadir2023a.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
-
-
-      <!-- <strong> <i style="color:#e74d3c">Early Accept</i></strong> -->
-
-    </div>
-    <a href="https://openreview.net/forum?id=CJgBMut3nC">[Previous version]</a> presented at the <strong>ICML </strong> <em>2nd AdvML workshop </em>2023.
-  </div>
-
-</div>
-
-<br />
-
-</li>
-
-
-<li>
-<div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-    <div class="title"><a href="https://arxiv.org/pdf/2308.08945">Interpretable Graph Neural Networks for Tabular Data</a></div>
-    <div class="author">A. Alkhatib,<strong> S. Ennadir</strong>, H. Boström & M. Vazirgiannis.</div>
-    <div class="periodical"><em>The 27th European Conference on Artificial Intelligence <strong>(ECAI)</strong>, 2024.</em>
-    </div>
-  <div class="links">
-
-    <a href="https://arxiv.org/pdf/2308.08945" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-    <a href="https://github.com/amrmalkhatib/ignnet" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-
-
-    <!-- a href="" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a> -->
-
-
-    <!-- <strong> <i style="color:#e74d3c">Early Accept</i></strong> -->
-
-
-  </div>
-  <a href="https://openreview.net/pdf/60ce21fd5bcf7b6442b1c9138d40e45251d03791.pdf">[Previous version]</a> presented at the <em>DMLR workshop </em>in <strong>ICLR </strong> 2024.
-</div>
-
-</li>
-
-
-<br />
-
-
-<li>
-<div class="pub-row">
-  <!-- <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="./assets/img/Unbounded.png" class="teaser img-fluid z-depth-1" style="width=100;height=70%; object-fit: contain;" />
-            <abbr class="badge">CNA-23</abbr>
-  </div> -->
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://drive.google.com/file/d/1ayO8CdXdr8c-Ge5ZKIEZIDB_O7R95lyr/view?usp=sharing">UnboundAttack : Generating Unbounded Adversarial Attacks to Graph Neural Networks</a></div>
-      <div class="author"><strong>S. Ennadir</strong>, A. Alkhatib, G. Nikolentzos, M. Vazirgiannis & H. Boström.</div>
-      <div class="periodical"><em>12th International Conference on Complex Networks<strong> (CNA)</strong>, 2023.</em>
-      </div>
-    <div class="links">
-      <a href="assets/files/ennadir23_unbounded.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-      <a href="https://drive.google.com/file/d/1JQ2w78eybaV63jG1Cx4rL2_RCzgFM76d/view?usp=sharing" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Slides</a>
-
-    </div>
-  </div>
-</div>
-</li>
-
-
-<li>
-<div class="pub-row">
-  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-      <div class="title"><a href="https://openreview.net/forum?id=_BjtIlib8N9">Structure-Aware Antibiotic Resistance Classification using Graph Neural Networks</a></div>
-      <div class="author">A. Qabel, <strong>S. Ennadir</strong>, G. Nikolentzos, J. Lutzeyer, M. Chatzianastasis, H. Boström & M. Vazirgiannis.</div>
-      <div class="periodical"><em>AI4Science Workshop at<strong> Neurips</strong>, 2022.</em>
-      </div>
-    <div class="links">
-
-      <a href="https://openreview.net/forum?id=_BjtIlib8N9" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-
-
-      <a href="https://github.com/Sennadir/Structure-Aware-Antibiotic-Resistance-Classification-Using-Graph-Neural-Networks" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Code</a>
-
-      <a href="./assets/bib/qabel2022structureaware.txt" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">BibTex</a>
-
-    </div>
-    <a href="https://www.biorxiv.org/content/biorxiv/early/2023/04/06/2022.10.06.511103.full.pdf">[Extended version]</a> currently <em>under review</em>.
-  </div>
-</div>
-</li>
-
-
-
-<p style="margin-bottom:-1.0cm;"></p>
-
-
-<br />
-
-
-
-</ol>
-</div>
-
-<hr>
-
-      <br>
-
-      I would like to thank <a href="https://johanneslutzeyer.com/"> Johannes Lutzeyer </a> for allowing me to copy the format of his website. This website is powered by Jekyll and <a href="https://github.com/yaoyao-liu/minimal-light" target="_blank" rel="noopener">Minimal Light</a> theme.
-
-
-      </section>
-      <footer>
-
-      </footer>
-    </div>
-    <script src="/assets/js/scale.fix.js"></script>
-
-    <script>
-      $(document).ready(function() {
-        $('body').on('click', '[data-toggle]', function(e) {
-          e.preventDefault();
-          let target = $(this).attr('data-toggle');
-          console.log(target);
-          $("#" + target).toggle();
-        })
-      })
-    </script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-111540567-4', 'auto');
-      ga('send', 'pageview');
-    </script>
-
-  </body>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Contact: ennadir ( at ) kth.se
+    <!-- <br> -->
+  </footer>
+
+  <script>
+    // keep header height in sync with actual layout (in case it wraps)
+    function setHeaderHeightVar(){
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var h = header.offsetHeight;
+      document.documentElement.style.setProperty('--header-h', h + 'px');
+      document.body.style.paddingTop = 'calc(var(--header-h))';
+    }
+    window.addEventListener('load', setHeaderHeightVar);
+    window.addEventListener('resize', setHeaderHeightVar);
+
+    // copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // abstract toggles (link-style)
+    document.querySelectorAll('.abs-link').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var li = link.closest('li');
+        var box = li.querySelector('.abstract-box');
+        var isHidden = box.hasAttribute('hidden');
+        if (isHidden) {
+          box.removeAttribute('hidden');
+          link.setAttribute('aria-expanded','true');
+          link.textContent = 'Hide abstract';
+        } else {
+          box.setAttribute('hidden','');
+          link.setAttribute('aria-expanded','false');
+          link.textContent = 'Abstract';
+        }
+      });
+    });
+
+    // experience split list
+    (function(){
+      var links = document.querySelectorAll('.exp-link');
+      var panels = document.querySelectorAll('.exp-right [role="tabpanel"]');
+      var marker = document.querySelector('.exp-marker');
+      var leftCol = document.querySelector('.exp-left');
+
+      function moveMarker(){
+        if(!marker || !leftCol) return;
+        var active = document.querySelector('.exp-link.active');
+        if(!active) return;
+        var top = active.offsetTop; // relative to .exp-left
+        var h = active.offsetHeight;
+        marker.style.transform = 'translateY(' + top + 'px)';
+        marker.style.height = h + 'px';
+      }
+
+      function show(id){
+        links.forEach(function(btn){ btn.classList.toggle('active', btn.getAttribute('data-target') === id); });
+        panels.forEach(function(p){ p.hidden = (p.id !== id); });
+        moveMarker();
+      }
+
+      links.forEach(function(btn){
+        btn.addEventListener('click', function(){ show(btn.getAttribute('data-target')); });
+        btn.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(btn.getAttribute('data-target')); } });
+      });
+      window.addEventListener('resize', moveMarker);
+
+      var first = document.querySelector('.exp-link.active');
+      if (first) show(first.getAttribute('data-target'));
+    })();
+
+    // email obfuscation (assembled at runtime so bots scanning static HTML won't see it)
+    document.querySelectorAll('.email-chip').forEach(function(a){
+      var u = a.getAttribute('data-u');
+      var d = a.getAttribute('data-d');
+      var t = a.getAttribute('data-t');
+      if (!u || !d || !t) return;
+      var addr = u + '@' + d + '.' + t;
+      a.setAttribute('href', 'mailto:' + addr);
+      // keep visible label as 'Email' to avoid exposing the address in text nodes
+    });
+  </script>
+</body>
 </html>
